@@ -1,0 +1,11 @@
+<%= simple_form_for task do |f|%>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :date_due %>
+  <%= f.input :date_done %>
+  <%= f.input :estimated_hour %>
+  <%= f.input :status, collection: Task.statuses.keys, prompt: "Selecciona un status" unless task.new_record?  %>
+  <%= f.input :tag %>
+  <%= f.input :priority %>
+<%= f.submit "Guardar tarea", class: "btn btn-primary" %>
+<% end %>

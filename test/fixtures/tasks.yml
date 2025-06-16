@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  date_due: 2025-06-13 11:13:45
+  date_done_datetime: MyString
+  estimated_hour: 1.5
+  status: 1
+  tag: MyString
+  priority: 1
+  user: one
+
+two:
+  title: MyString
+  description: MyString
+  date_due: 2025-06-13 11:13:45
+  date_done_datetime: MyString
+  estimated_hour: 1.5
+  status: 1
+  tag: MyString
+  priority: 1
+  user: two
