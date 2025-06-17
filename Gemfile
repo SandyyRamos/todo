@@ -69,3 +69,7 @@ end
 gem "devise", "~> 4.9"
 
 gem "simple_form", "~> 5.3"
+
+gem "bootstrap", "~> 5.3"
+
+gem "sassc-rails"
