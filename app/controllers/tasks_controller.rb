@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all #solo plural el index siempre guarda un array
+    @tasks = Task.order(created_at: :desc) #solo plural el index siempre guarda un array
   end
 
   def new
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     if @task.save
       respond_to do |format|
         format.html {redirect_to root_path, notice: "tarea guardada"}
-        format.turbo_stream 
+        format.turbo_stream
       end
     else
       render :new, status: :unprocessable_entity
@@ -29,9 +29,24 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
+    if @task.update(tasks_params)
+      respond_to do |format|
+        format.html {redirect_to root_path, notice: "tarea eliminada"}
+        format.turbo_stream
+      end
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
-  def delete
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    respond_to do |format|
+      format.html {redirect_to root_path, notice: "tarea eliminada"}
+      format.turbo_stream
+    end
   end
 
   private

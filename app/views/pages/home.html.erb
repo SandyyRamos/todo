@@ -1,17 +1,20 @@
-<div class="main-wrapper position-relative vh-100">
+<div class="main-wrapper mt-5">
   <div class="add-task-button">
     <%= link_to '+', new_task_path, class: 'btn-add-task', data: { turbo_frame: 'new_task' } %>
   </div>
 
-  <div class="d-flex justify-content-center align-items-center h-100 text-center">
+  <div class="d-flex justify-content-center align-items-center flex-column h-100 text-center">
+
     <div>
       <p class="date"><%= Time.zone.now.strftime("%A, %B %d, %Y") %></p>
       <h1 class="mb-4">📝 TO-DO LIST</h1>
-      <p class="lead">Organize, prioritize, and complete your tasks efficiently.</p>
 
-      <%= turbo_frame_tag :new_task %>
+      <p class="lead">Organize, prioritize, and complete your tasks efficiently.</p>
+      <%= turbo_frame_tag :new_task  %>
+
 
       <%= turbo_frame_tag :tasks do %>
+
         <%= render @tasks %>
       <% end %>
     </div>

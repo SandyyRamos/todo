@@ -1,13 +1,3 @@
-body {
-  padding-top: 260px;
-}
-
-.main-wrapper {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-}
-
 .add-task-button {
   position: fixed;
   top: 20px;
@@ -22,7 +12,7 @@ body {
   background-color: white;
   border: 4px solid #61f3b8;
   color: #37d3b7;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -38,6 +28,45 @@ body {
   background-color: #d1fae5;
   box-shadow: 0 6px 18px rgba(128, 242, 208, 0.5);
 }
+
+.btn-delete-task {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 4px solid #e30f2f;
+  color: #d3223f;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(75, 235, 222, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  //line-height: 1;
+  cursor: pointer;
+}
+
+.btn-edit-task {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 4px solid #385ce9;
+  color: #356ee8;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(75, 235, 222, 0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  //line-height: 1;
+  cursor: pointer;
+}
+
 
 .card-task {
   background-color: #dbadd4;
@@ -66,6 +95,6 @@ body {
 }
 
 .card {
-  box-shadow: 0 4px 20px rgba(236, 146, 222, 0.6) !important;
+  box-shadow: 0 4px 20px rgba(187, 183, 186, 0.6) !important;
   border: none;
 }

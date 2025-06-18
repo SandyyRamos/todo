@@ -1,12 +1,12 @@
 <div class="card p-4 shadow rounded mt-6">
-  <h2 class="mb-4">📌 New Task</h2>
+  <h2 class="mb-4"> <%= task.new_record? ? "📌 New Task" : "Edit Task" %> </h2>
 
   <%= simple_form_for task do |f| %>
     <div class="row">
       <div class="col-md-6">
         <%= f.input :title, label: "Title", input_html: { class: "form-control", placeholder: "Enter task title" } %>
         <%= f.input :description, label: "Description", input_html: { rows: 5, class: "form-control", placeholder: "Describe the task briefly" } %>
-        <%= f.input :estimated_hour, label: "Estimated Hours", input_html: { class: "form-control", placeholder: "e.g., 3.5" } %>
+        <%= f.input :estimated_hour, label: "Estimated Hours", input_html: { class: "form-control", placeholder: "e.g., 1.5" } %>
       </div>
 
       <div class="col-md-6">

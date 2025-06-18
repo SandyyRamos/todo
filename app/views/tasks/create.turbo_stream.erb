@@ -1,2 +1,2 @@
-<%= turbo_stream.append :tasks, partial: "tasks/task", locals: {task: @task}  %>
+<%= turbo_stream.prepend :tasks, partial: "tasks/task", locals: {task: @task}  %>
 <%= turbo_stream.remove :new_task %>
