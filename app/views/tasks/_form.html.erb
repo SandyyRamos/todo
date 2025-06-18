@@ -1,11 +1,26 @@
-<%= simple_form_for task do |f|%>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :date_due %>
-  <%= f.input :date_done %>
-  <%= f.input :estimated_hour %>
-  <%= f.input :status, collection: Task.statuses.keys, prompt: "Selecciona un status" unless task.new_record?  %>
-  <%= f.input :tag %>
-  <%= f.input :priority %>
-<%= f.submit "Guardar tarea", class: "btn btn-primary" %>
-<% end %>
+<div class="card p-4 shadow rounded mt-6">
+  <h2 class="mb-4">📌 New Task</h2>
+
+  <%= simple_form_for task do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :title, label: "Title", input_html: { class: "form-control", placeholder: "Enter task title" } %>
+        <%= f.input :description, label: "Description", input_html: { rows: 5, class: "form-control", placeholder: "Describe the task briefly" } %>
+        <%= f.input :estimated_hour, label: "Estimated Hours", input_html: { class: "form-control", placeholder: "e.g., 3.5" } %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.input :date_due, label: "Due Date", as: :date, input_html: { class: "form-control" } %>
+        <%= f.input :date_done, label: "Completion Date", as: :date, input_html: { class: "form-control" } %>
+        <%= f.input :priority, label: "Priority", collection: ['Minor', 'Moderate', 'Major', 'Critical', 'Immediate'], prompt: "Select priority", input_html: { class: "form-select" } %>
+        <%= f.input :tag, label: "Tag", input_html: { class: "form-control", placeholder: "Add a tag (optional)" } %>
+        <% unless task.new_record? %>
+          <%= f.input :status, collection: Task.statuses.keys.map { |s| [s.humanize, s] }, prompt: "Select status", input_html: { class: "form-select" } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="mt-4 text-end">
+      <%= f.submit "💾 Save Task", class: "btn btn-success px-4 py-2" %>
+    </div>
+  <% end %>
+</div>

@@ -1,7 +1,18 @@
+body {
+  padding-top: 260px;
+}
+
+.main-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
 .add-task-button {
-  position: absolute;
+  position: fixed;
   top: 20px;
-  right: 750px;
+  right: 695px;
+  z-index: 1050;
 }
 
 .btn-add-task {
@@ -10,17 +21,17 @@
   border-radius: 50%;
   background-color: white;
   border: 4px solid #61f3b8;
-  color: #61f3b8;
-  font-size: 50px;
+  color: #37d3b7;
+  font-size: 36px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(99, 230, 147, 0.3);
+  box-shadow: 0 4px 12px rgba(75, 235, 222, 0.3);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   line-height: 1;
-  padding-bottom: 2px;
+  cursor: pointer;
 }
 
 .btn-add-task:hover {
@@ -28,9 +39,8 @@
   box-shadow: 0 6px 18px rgba(128, 242, 208, 0.5);
 }
 
-
 .card-task {
-  background-color: #e1acd9;
+  background-color: #dbadd4;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   padding: 1.2rem 1.5rem;
@@ -53,4 +63,9 @@
     transform: translateY(-3px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   }
+}
+
+.card {
+  box-shadow: 0 4px 20px rgba(236, 146, 222, 0.6) !important;
+  border: none;
 }
